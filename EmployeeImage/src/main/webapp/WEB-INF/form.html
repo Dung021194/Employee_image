@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:if="${employee.id} == null" >Create form </h1>
+<h1 th:if="${employee.id} != null" >Update form </h1>
+<form th:action="@{/employees/save}" th:method="post" th:object="${employee}" enctype="multipart/form-data">
+    <input th:field="*{id}" hidden="hidden">
+     Name:  <input type="text" th:field="*{name}"><br>
+      Age:  <input type="number" th:field="*{age}"><br>
+    Image:  <input type="file" th:field="*{image}"><br>
+  <button type="submit">Save</button>
+    <a th:href="/employees">Back</a>
+</form>
+
+</body>
+</html>
