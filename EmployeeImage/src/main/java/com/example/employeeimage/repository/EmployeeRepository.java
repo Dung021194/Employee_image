@@ -51,7 +51,7 @@ public class EmployeeRepository {
             employeeUpdate.setName(employee.getName());
             employeeUpdate.setAge(employee.getAge());
             if (employee.getImagePath() != null){
-                employeeUpdate.setImagePath(employeeUpdate.getImagePath());
+                employeeUpdate.setImagePath(employee.getImagePath());
             }
             session.saveOrUpdate(employeeUpdate);
             transaction.commit();
